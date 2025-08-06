@@ -1,6 +1,6 @@
-const userService = require('../services/userService');
+import * as userService from '../services/userService.js';
 
-exports.getUsers = async (req, res) => {
+export const getUsers = async (req, res) => {
   try {
     const users = await userService.getAllUsers();
     res.json(users);
@@ -9,7 +9,7 @@ exports.getUsers = async (req, res) => {
   }
 };
 
-exports.getUser = async (req, res) => {
+export const getUser = async (req, res) => {
   try {
     const user = await userService.getUserById(req.params.id);
     if (!user) return res.status(404).json({ message: 'User not found' });
@@ -19,7 +19,7 @@ exports.getUser = async (req, res) => {
   }
 };
 
-exports.createUser = async (req, res) => {
+export const createUser = async (req, res) => {
   const { firstName, lastName, email, role } = req.body;
   if (!firstName || !lastName || !email || !role) {
     return res.status(400).json({ message: "Missing required fields" });
@@ -33,7 +33,7 @@ exports.createUser = async (req, res) => {
   }
 };
 
-exports.updateUser = async (req, res) => {
+export const updateUser = async (req, res) => {
   try {
     await userService.updateUser(req.params.id, req.body);
     res.json({ message: 'User updated' });
@@ -42,7 +42,7 @@ exports.updateUser = async (req, res) => {
   }
 };
 
-exports.deleteUser = async (req, res) => {
+export const deleteUser = async (req, res) => {
   try {
     await userService.deleteUser(req.params.id);
     res.json({ message: 'User deleted' });
