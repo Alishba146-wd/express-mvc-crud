@@ -1,33 +1,25 @@
-const { getDB } = require('../config/db');
-const { ObjectId } = require('mongodb');
+import { getDB } from '../config/db.js';
+import { ObjectId } from 'mongodb';
 
-async function getAllUsers() {
+export async function getAllUsers() {
   return await getDB().collection('users').find().toArray();
 }
 
-async function getUserById(id) {
+export async function getUserById(id) {
   return await getDB().collection('users').findOne({ _id: new ObjectId(id) });
 }
 
-async function createUser(data) {
+export async function createUser(data) {
   return await getDB().collection('users').insertOne(data);
 }
 
-async function updateUser(id, data) {
+export async function updateUser(id, data) {
   return await getDB().collection('users').updateOne(
     { _id: new ObjectId(id) },
     { $set: data }
   );
 }
 
-async function deleteUser(id) {
+export async function deleteUser(id) {
   return await getDB().collection('users').deleteOne({ _id: new ObjectId(id) });
 }
-
-module.exports = {
-  getAllUsers,
-  getUserById,
-  createUser,
-  updateUser,
-  deleteUser
-};

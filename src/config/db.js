@@ -1,10 +1,10 @@
-const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://expressUser:pw123456@cluster0.vrqksry.mongodb.net/?retryWrites=true&w=majority";
+import { MongoClient } from 'mongodb';
 
+const uri = "mongodb+srv://expressUser:pw123456@cluster0.vrqksry.mongodb.net/?retryWrites=true&w=majority";
 const client = new MongoClient(uri);
 let db;
 
-async function connectDB() {
+export async function connectDB() {
   try {
     await client.connect();
     db = client.db('expresscrud');
@@ -14,8 +14,6 @@ async function connectDB() {
   }
 }
 
-function getDB() {
+export function getDB() {
   return db;
 }
-
-module.exports = { connectDB, getDB };
