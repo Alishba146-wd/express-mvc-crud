@@ -1,0 +1,32 @@
+[
+  {
+    "testName": "Invalid Email Format",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "testName": "Missing Required Fields (First Name)",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "testName": "Invalid Mobile Number (Less Digits)",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "testName": "Empty Message Field",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "testName": "Dropdown Service Selection Verification",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "testName": "Submit Button Functionality Test",
+    "passed": true,
+    "error": ""
+  }
+]
