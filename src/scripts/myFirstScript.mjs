@@ -26,4 +26,3 @@ export default async function myFirstScript() {
   await browser.close();
 }
 
-myFirstScript();
