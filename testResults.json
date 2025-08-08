@@ -6,8 +6,8 @@
   },
   {
     "testName": "Invalid Email Format",
-    "passed": false,
-    "error": "No validation message shown"
+    "passed": true,
+    "error": "Please enter an email address."
   },
   {
     "testName": "Invalid Mobile Number (Less Digits)",
