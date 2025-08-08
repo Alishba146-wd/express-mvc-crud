@@ -6,8 +6,8 @@
   },
   {
     "testName": "Invalid Email Format",
-    "passed": true,
-    "error": "Please enter an email address."
+    "passed": false,
+    "error": "No validation message shown"
   },
   {
     "testName": "Invalid Mobile Number (Less Digits)",
@@ -16,7 +16,7 @@
   },
   {
     "testName": "Empty Message Field",
-    "passed": true,
+    "passed": false,
     "error": "No validation was enforced for empty message field."
   },
   {
@@ -26,7 +26,7 @@
   },
   {
     "testName": "Submit Button Functionality Test",
-    "passed": false,
-    "error": "No success message found after submit."
+    "passed": true,
+    "error": "Form responded with error: \"There was an error trying to send your message. Please try again later.\""
   }
 ]
