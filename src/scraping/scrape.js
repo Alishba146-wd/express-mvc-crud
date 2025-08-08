@@ -1,15 +1,14 @@
 import * as cheerio from 'cheerio';
-import * as axios from 'axios';
 import { chromium } from 'playwright';
 
-
-async function scrapeProduct() {
+export async function scrapeProductFromUrl(productUrl) {
   let browser;
+
   try {
     browser = await chromium.launch({ headless: true });
     const page = await browser.newPage();
-    
-    await page.goto('https://www.brahelectric.com/Products/Bus-Plugs-Ground-Kits/ACSBSLG', {
+
+    await page.goto(productUrl, {
       waitUntil: 'networkidle',
       timeout: 60000
     });
@@ -21,17 +20,16 @@ async function scrapeProduct() {
 
     const product = {
       title: $('h1').text().trim().replace(/\s+/g, ' '),
-      sku: $('span[itemprop="name"]').text().trim(), // verify if this is really SKU
+      sku: $('span[itemprop="name"]').text().trim(),
       price: $('label[itemprop="offers"] span').text().trim() ||
              $('meta[itemprop="price"]').attr('content') || 'N/A',
       description: $('p.mt-2.text-[14px]').first().text().trim(),
       inStock: $('.text-green-600').text().trim(),
       images: [],
       specifications: {},
-      breadcrumbs: []
+      
     };
 
-    // Extract images
     $('img[alt="Original"]').each((i, el) => {
       let src = $(el).attr('src');
       if (src && !src.startsWith('http')) {
@@ -40,7 +38,6 @@ async function scrapeProduct() {
       if (src) product.images.push(src);
     });
 
-    // Extract specs
     $('#specTable tr').each((i, row) => {
       const key = $(row).find('td:first-child').text().trim();
       const value = $(row).find('td:last-child').text().trim();
@@ -49,12 +46,6 @@ async function scrapeProduct() {
       }
     });
 
-    // Extract breadcrumbs
-    $('nav[aria-label="breadcrumb"] a').each((i, el) => {
-      product.breadcrumbs.push($(el).text().trim());
-    });
-
-    // See More interaction (if available)
     const seeMoreButton = await page.$('span:text("See More")');
     if (seeMoreButton) {
       await seeMoreButton.click();
@@ -72,22 +63,9 @@ async function scrapeProduct() {
       });
     }
 
-    console.log('Scraped Product Data:\n', product);
     return product;
 
-  } catch (error) {
-    console.error('Scraping error:', error);
   } finally {
     if (browser) await browser.close();
   }
 }
-
-scrapeProduct()
-  .then(() => {
-    console.log('Scraping completed!');
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error('Error:', err);
-    process.exit(1);
-  });
