@@ -1,23 +1,23 @@
 [
   {
-    "testName": "Invalid Email Format",
-    "passed": true,
-    "error": ""
-  },
-  {
     "testName": "Missing Required Fields (First Name)",
     "passed": true,
-    "error": ""
+    "error": "Please fill out this field."
+  },
+  {
+    "testName": "Invalid Email Format",
+    "passed": true,
+    "error": "Please enter an email address."
   },
   {
     "testName": "Invalid Mobile Number (Less Digits)",
     "passed": true,
-    "error": ""
+    "error": "Please enter a telephone number."
   },
   {
     "testName": "Empty Message Field",
     "passed": true,
-    "error": ""
+    "error": "No validation was enforced for empty message field."
   },
   {
     "testName": "Dropdown Service Selection Verification",
@@ -26,7 +26,7 @@
   },
   {
     "testName": "Submit Button Functionality Test",
-    "passed": true,
-    "error": ""
+    "passed": false,
+    "error": "No success message found after submit."
   }
 ]
