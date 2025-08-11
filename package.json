@@ -11,7 +11,6 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@babel/cli": "^7.28.0",
     "@babel/core": "^7.28.0",
@@ -23,7 +22,11 @@
     "axios": "^1.11.0",
     "cheerio": "^1.1.0",
     "csv-writer": "^1.6.0",
+    "fast-xml-parser": "^5.2.5",
     "mongodb": "^6.18.0",
+    "node-fetch": "^3.3.2",
     "playwright": "^1.54.2"
-  }
+  },
+  "keywords": [],
+  "description": ""
 }
