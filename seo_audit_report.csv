@@ -1,10 +1,15 @@
+Check,Result
+Robots.txt Exists,true
+Sitemap.xml Exists,true
+Sitemap in Robots.txt,true
+
 URL,Title,Meta Description,H1
 "https://www.brahelectric.com","BRAH Electric | #1 Source for Replacement Electrical Parts","BRAH Electric specializes in aftermarket electrical parts designed to fit and function with major OEM brands and to replace obsolete or hard-to-find equipment. ","Your #1 Source for Aftermarket
 Electrical Parts"
 "https://www.brahelectric.com/AboutUs","About Us | Replacement Electrical Parts | BRAH Electric","BRAH Electric is an electrical products manufacturing company, specializing in aftermarket replacement power distribution equipment, controls, and parts. ","WELCOME TO BRAH ELECTRIC"
 "https://www.brahelectric.com/Contact","Contact Us | Replacement Electrical Parts | BRAH Electric","Contact BRAH Electric for any questions, or for a consultation, by email at info@brahelectric.com or by phone at (855) 355-2724.","GET IN TOUCH"
 "https://www.brahelectric.com/Orders","Order Details","❌ No meta description","Invalid Order Id"
-"https://www.brahelectric.com/Orders/Success","❌ No title","❌ No meta description","Congratulations! you’ve completed your Order."
+"https://www.brahelectric.com/Orders/Success","","❌ No meta description","Congratulations! you’ve completed your Order."
 "https://www.brahelectric.com/Policies","Return and Privacy Policies | BRAH Electric","Review BRAH Electric's policies: returns, warranty, account terms, copyright, trademarks, and privacy. ","Terms & Conditions"
 "https://www.brahelectric.com/Products","Bus Plugs, Circuit Breakers & Motor Controls | BRAH Electric","Explore BRAH Electric's aftermarket replacement parts: bus plugs, circuit breakers, motor controls, and more. Quality equipment at a great value. Same day shipping!","Products"
 "https://www.brahelectric.com/privacy-policy","Privacy Policies | BRAH Electric","❌ No meta description","Privacy Policy"
